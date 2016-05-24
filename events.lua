@@ -1134,18 +1134,6 @@ function Storyline_API.initEventsStructure()
 		end);
 	end
 
-	-- Replay buttons
-	local questButton = CreateFrame("Button", nil, QuestLogPopupDetailFrame, "Storyline_CommonButton");
-	questButton:SetText(loc("SL_STORYLINE"));
-	questButton:SetPoint("TOP");
-	questButton:SetScript("OnClick", function()
-		QuestLogFrame:Show();	--make sure GetQuestLogQuestText() will return something.
-		local questDescription = GetQuestLogQuestText();
-		QuestLogFrame:Hide();
-		startDialog("none", questDescription, "REPLAY", EVENT_INFO["REPLAY"]);
-	end);
-
-
 	-- UI
 	setTooltipAll(Storyline_NPCFrameChatPrevious, "BOTTOM", 0, 0, loc("SL_RESET"), loc("SL_RESET_TT"));
 	setTooltipForSameFrame(Storyline_NPCFrameObjectivesYes, "TOP", 0, 0,  loc("SL_ACCEPTANCE"));
